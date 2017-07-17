@@ -1,0 +1,380 @@
+<!-- última versión  -->
+{% extends 'base/base.html' %}
+{% block titulo_principal %}Crear estudio{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+    <form class="form-horizontal" role="form" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="widget wlightblue">
+                    <div class="widget-head">
+                        <div class="pull-left">Benchmarking</div>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="pre-scrollable">
+                        <div class="widget-content">
+                        <div class="padd">
+
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Código</label>
+                                        {{ form.codigo }}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Título</label>
+                                        {{ form.titulo }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Temática</label>
+                                        {{ form.tematica }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Equipo de expertos</label>
+                                        {{ form.equipo_expertos }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Moderador</label>
+                                        {{ form.moderador }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Analista Externo</label>
+                                        {{ form.analista_externo }}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                                <div class="col-md-12">
+                                    <div class="widget wlightblue">
+                                        <div class="widget-head">
+                                            <div class="pull-left">Organización</div>
+                                            <div class="widget-icons pull-right">
+                                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                        <div class="widget-content">
+                                            <div class="padd">
+
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-1">
+                                                        <div class="form-group">
+                                                            <label class=" control-label">Tipo de Organización</label>
+                                                            {{ form2.tipo_organizacion }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-7 col-md-offset-1">
+                                                        <div class="form-group">
+                                                            <label class=" control-label">Nombre</label>
+                                                            {{ form2.nombre_organizacion }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <div class="form-group">
+                                                            <label class=" control-label">Directivo</label>
+                                                            {{ form2.directivo_organizacion }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <div class="form-group">
+                                                            <label class=" control-label">País</label>
+                                                            {{ form2.pais }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            <br>
+                            <hr>
+
+                            <button class="btn btn-success pull-right" type="submit">Guardar</button>
+                            <div class="clearfix"></div>
+
+                    </div>
+                </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+    </form>
+{% endblock %}
+
+<!-- Versión anterior  -->
+
+<!--{% extends 'base/base.html' %}
+{% block titulo_principal %}Crear estudio{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+    <form class="form-horizontal" role="form" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="widget wlightblue">
+                    <div class="widget-head">
+                        <div class="pull-left">Benchmarking</div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+
+                            <div class="form-group">
+                                <label class="control-label">Codigo</label>
+                                {{ form.codigo }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Título</label>
+                                {{ form.titulo }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Temática</label>
+                                {{ form.tematica }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Equipo de Expertos</label>
+                                {{ form.equipo_expertos }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Moderador</label>
+                                {{ form.moderador }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Analista Externo</label>
+                                {{ form.analista_externo }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Tipo de Organización</label>
+                                {{ form2.tipo_organizacion }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Nombre</label>
+                                {{ form2.nombre_organizacion }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Directivo</label>
+                                {{ form2.directivo_organizacion }}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">País</label>
+                                {{ form2.pais }}
+                            </div>
+
+                            <button class="btn btn-success pull-right" type="submit">Guardar</button>
+                            <div class="clearfix"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+{% endblock %}-->
+
+<!--Tabla básica-->
+{% extends 'base/base.html' %}
+{% block content %}
+<table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <td>Factor</td>
+                <td>Descripción</td>
+                <td>Acciones</td>
+        </thead>
+
+        <tbody>
+            {% if object_list %}
+            {% for idea in object_list%}
+
+            <tr>
+                <td>{{ idea.definicion_idea }}</td>
+                <td>{{ idea.argumento }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'benchmarking:editar_idea' idea.id%}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'benchmarking:eliminar_idea' idea.id%}">Eliminar</a>
+
+                </td>
+            </tr>
+
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay resgistos de actividad</h1>
+            {% endif %}
+        </tbody>
+
+    </table>
+{% endblock %}
+
+<!--Form para conclusión de factores-->
+
+<form class="form-horizontal" role="form" method="post">
+                                        <div class="row">
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <label class=" control-label">Nombre corto</label>
+                                                    {{ form.nombre_corto }}
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-7 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <label class=" control-label">Título</label>
+                                                    {{ form.titulo }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <label class=" control-label">Descripción</label>
+                                                    {{ form.descripcion }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <label class=" control-label">Ideas</label>
+                                                    {{ form.ideas }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <button class="btn btn-success pull-right" type="submit">Guardar</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+
+<!--delete_conclusión-->
+
+{% extends 'base/base.html' %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    <h3>¿Desea eliminar el registro de {{ object.titulo }}?</h3>
+    <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+    <a class="btn btn-default" href="{% url 'benchmarking:resultado_mod' %}">Cancelar</a>
+    </form>
+{% endblock %}
+
+<!--Lista de ideas funcional-->
+
+{% extends 'base/base.html' %}
+{% block titulo_principal %}Factores claves{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="widget wgreen">
+                        <div class="widget-head">
+                            <div class="pull-left">Identificación de factores</div>
+                            <div class="widget-icons pull-right">
+                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="widget-content">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th><b>Factor</b></th>
+                                        <th><b>Descripción</b></th>
+                                        <th style="width: 100px"><b>Acciones</b></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% if object_list %}
+                                        {% for idea in object_list%}
+                                            <tr>
+                                                <td>{{ idea.definicion_idea }}</td>
+                                                <td>{{ idea.argumento }}</td>
+                                                <td>
+                                                    <a class="btn btn-primary" href="{% url 'benchmarking:editar_idea' idea.id%}"><i class="fa fa-pencil"></i></a>
+                                                    <a class="btn btn-danger" href="{% url 'benchmarking:eliminar_idea' idea.id%}"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+
+                                        {% endfor %}
+                                    {% else %}
+                                        <h1>No hay resgistos de actividad</h1>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="widget-foot">
+                            <div class="btn-group stackControls">
+                                <a class="btn btn-success pull-right" href="{% url 'benchmarking:form_idea' %}"><i class="fa fa-plus-circle"> Ingresar nuevo factor</i></a>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <a class=" btn btn-success" href="">Finalizar &nbsp;<i class="fa fa-check-square-o"></i></a>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+

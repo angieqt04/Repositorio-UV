@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% block titulo_principal %}Crear estudio{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+    <form class="form-horizontal" role="form" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="widget wlightblue">
+                    <div class="widget-head">
+                        <div class="pull-left">Benchmarking</div>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Código</label>
+                                        {{ form.codigo_sesion }}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Estado</label>
+                                        <br>
+                                        Permitir ideas &nbsp;{{ form.permitir_ideas }}
+                                        &nbsp; Abierto &nbsp;{{ form.estado }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Fecha inicial</label>
+                                        {{ form.fecha_inicial }}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class=" control-label">Fecha_Final</label>
+                                        {{ form.fecha_final }}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <br>
+                            <hr>
+
+                            <button class="btn btn-success pull-right" type="submit">Guardar</button>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

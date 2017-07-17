@@ -1,0 +1,133 @@
+{% extends 'base/base.html' %}
+{% block titulo_principal %}Crear estudio{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div id="contenido" class="tab-content">
+
+                <nav>
+                    <ul class="nav nav-pills" >
+
+                        <li class="active">
+                            <a href="#agrupacion" data-toggle="tab"><b>Agrupación</b></a>
+                        </li>
+
+                        <li>
+                            <a href="#votacion" data-toggle="tab"><b>Votación</b></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="agrupacion">
+                        <div class="col-md-12">
+                            <div class="widget wviolet">
+
+                                <div class="widget-head">
+                                    <div class="pull-left">Conclusión de Factores</div>
+                                    <div class="widget-icons pull-right">
+											<a href="{% url 'benchmarking:conclusion' %}" ><i class="fa fa-plus-circle"></i></a>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="widget-content">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Conclusión</b></th>
+                                                <th><b>Descripción</b></th>
+                                                <th><b>Factores</b></th>
+                                                <th style="width: 100px"><b>Acciones</b></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        {% if object_list %}
+                                            {% for grupo_idea in object_list%}
+                                                <tr>
+                                                    <td>{{ grupo_idea.titulo }}</td>
+                                                    <td>{{ grupo_idea.descripcion }}</td>
+                                                    <td>{{ grupo_idea.ideas }}
+                                                    <td>
+                                                        <a class="btn btn-primary" href="{% url 'benchmarking:editar_conclusion' grupo_idea.id%}"><i class="fa fa-pencil"></i></a>
+                                                        <a class="btn btn-danger" href="{% url 'benchmarking:eliminar_conclusion' grupo_idea.id%}"><i class="fa fa-times"></i></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <h1>No hay resgistos de conclusiones</h1>
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="widget-foot">
+                                    <button class="btn btn-default pull-right" type="submit">Guardar</button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+
+                    <div class="tab-pane fade" id="votacion">
+                        <div class="col-md-12">
+                            <div class="widget wviolet">
+
+                                <div class="widget-head">
+                                    <div class="pull-left">Consenso</div>
+                                    <div class="widget-icons pull-right">
+											<a href="{% url 'benchmarking:conclusion' %}" ><i class="fa fa-plus-circle"></i></a>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="widget-content">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Factor</b></th>
+                                                <th><b>Votos</b></th>
+                                                <th><b>Resultados</b></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        {% if object_list %}
+                                            {% for grupo_idea in object_list%}
+                                                <tr>
+                                                    <td>{{ grupo_idea.titulo }}</td>
+                                                    <td>{{ grupo_idea.descripcion }}</td>
+                                                    <td>{{ grupo_idea.ideas }}
+                                                    <td>
+                                                        <a class="btn btn-primary" href="{% url 'benchmarking:editar_conclusion' grupo_idea.id%}"><i class="fa fa-pencil"></i></a>
+                                                        <a class="btn btn-danger" href="{% url 'benchmarking:eliminar_conclusion' grupo_idea.id%}"><i class="fa fa-times"></i></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <h1>No hay resgistos de conclusiones</h1>
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="widget-foot">
+                                    <button class="btn btn-default pull-right" type="submit">Guardar</button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

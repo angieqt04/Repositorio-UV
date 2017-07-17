@@ -1,0 +1,129 @@
+{% extends 'base/base.html' %}
+{% block titulo_principal %}Crear estudio{% endblock %}
+{% block content_title %}Benchmarking{% endblock %}
+{% block content %}
+    <form class="form-horizontal" role="form" method="post">
+        {% csrf_token %}
+        <div class="widget wlightblue">
+            <div class="widget-head">
+                <div class="pull-left">Benchmarking</div>
+                <div class="clearfix"></div>
+            </div>
+
+                <div class="widget-content">
+                    <div class="pre-scrollable">
+                        <div class="padd">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Código</label>
+                                    {{ form.codigo }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Título</label>
+                                    {{ form.titulo }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Temática</label>
+                                    {{ form.tematica }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Equipo de expertos</label>
+                                    {{ form.equipo_expertos }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Moderador</label>
+                                    {{ form.moderador }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class=" control-label">Analista Externo</label>
+                                    {{ form.analista_externo }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget wlightblue">
+                            <div class="widget-head">
+                                <div class="pull-left">Organización</div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" id="wminimize_crear sesion" class="wminimize"></a>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="widget-content">
+                                <div class="padd">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <div class="form-group">
+                                                <label class=" control-label">Tipo de Organización</label>
+                                                {{ form2.tipo_organizacion }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-7 col-md-offset-1">
+                                            <div class="form-group">
+                                                <label class=" control-label">Nombre</label>
+                                                {{ form2.nombre_organizacion }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-1">
+                                            <div class="form-group">
+                                                <label class=" control-label">Directivo</label>
+                                                {{ form2.directivo_organizacion }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-1">
+                                            <div class="form-group">
+                                                <label class=" control-label">País</label>
+                                                {{ form2.pais }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            <div class="widget-foot">
+                <button type="submit" id="" class="btn btn-success pull-right">Guardar<i class="fa fa-chevron-right"></i></button>
+                <div class="clearfix"></div>
+            </div>
+
+
+            </div>
+    </form>
+{% endblock %}
