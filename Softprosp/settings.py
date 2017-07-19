@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Benchmarking',
+    'comments',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,7 +86,7 @@ DATABASES = {
     }
 }
 
-
+SITE_ID = 1
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
